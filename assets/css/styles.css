@@ -950,33 +950,68 @@ img {
         height: 330px;
     }
 }
-/* COMPANY TESTIMONIAL LOGOS */
-.slider-partner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.section-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    place-items: center;
-    padding: 10px 20px;
-    /* width: 100%; */
-    margin: 0 auto;
-}
-
-.customer-logos > .slide img {
-    max-width: 75%;
-}
-
-@media screen and (max-width: 400px) {
-    .slider-wrapper h2 {
-        text-align: center;
+/* company portfolio */
+.slider-container {
+    overflow: hidden;
+    white-space: nowrap;
+    // background:blue;
+    // height:500px;
+  }
+  .slider-content-wrapper-left {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: slideleft 40s linear infinite;
+  }
+  .slider-content-wrapper-right {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: slideright 40s linear infinite;
+  }
+  .slider-content-wrapper > div {
+    display: inline-block;
+  }
+  @keyframes slideleft {
+    from {
+      transform: translate3d(0, 0, 0);
     }
-
-    .customer-logos > .slide img {
-        height: 100px;
+    to {
+      transform: translate3d(-50%, 0, 0);
     }
-}
-
+  }
+  @keyframes slideright {
+    from {
+      transform: translate3d(-50%, 0, 0);
+    }
+    to {
+      transform: translate3d(0%, 0, 0);
+    }
+  }
+  
+  .company-slider {
+    // margin-top: 2rem;
+    // margin-bottom: 4rem;
+  }
+  .company-logos-container {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .company-logos-container > div {
+    display: inline-block;
+    padding: 0 2.2rem;
+    vertical-align: middle;
+    opacity: 0.25;
+    outline: none;
+    cursor: default;
+    transition: opacity 0.2s ease;
+  }
+  .company-logos-container > div:hover {
+    opacity: 0.8;
+  }
+  
+  img {
+    width: 200px;
+    height: 200px;
+  }
+  
