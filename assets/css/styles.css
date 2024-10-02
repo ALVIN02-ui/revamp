@@ -954,8 +954,8 @@ img {
 .slider-container {
     overflow: hidden;
     white-space: nowrap;
-    // background:blue;
-    // height:500px;
+    background:blue;
+    height:500px;
   }
   .slider-content-wrapper-left {
     display: inline-block;
@@ -990,8 +990,8 @@ img {
   }
   
   .company-slider {
-    // margin-top: 2rem;
-    // margin-bottom: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
   }
   .company-logos-container {
     white-space: nowrap;
