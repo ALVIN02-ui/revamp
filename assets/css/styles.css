@@ -343,7 +343,7 @@ img {
 }
 
 .button:hover {
-    box-shadow: 0 8px 32px hsla(197, 89%, 63%, 0.3);
+    box-shadow: 0 8px 32px #4dc5f54d;
     color: var(--white-color);
 }
 
@@ -421,6 +421,33 @@ img {
     margin: 0 0 0 2.5rem;
 
 }
+.read-more-btn {
+    background-color: #4dc5f54d;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.read-more-btn:hover {
+    background-color: #4dc5f54d;
+}
+
+.read-more-content {
+    display: none;
+}
+
+.read-more-btn.active {
+    background-color: #4dc5f54d;
+}
+
+.read-more-content.active {
+    display: block;
+}
+
 
 /*=============== SERVICES ===============*/
 .services {
