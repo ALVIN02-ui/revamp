@@ -110,6 +110,5 @@ $(document).ready(function () {
 /*===========READ MORE==========*/ 
 // Add an event listener to the "Read More" button
 document.querySelector('.read-more-btn').addEventListener('click', function() {
-    this.classList.toggle('active');
     document.querySelector('.read-more-content').classList.toggle('active');
 });
