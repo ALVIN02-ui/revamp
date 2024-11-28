@@ -113,7 +113,7 @@ document.querySelector('.read-more-btn').addEventListener('click', function() {
     document.querySelector('.read-more-content').classList.toggle('active');
 });
 /*==========submit quote=======*/
-Add an event listener to the "submit" button
+// Add an event listener to the "submit" button
 
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.querySelector("form");
