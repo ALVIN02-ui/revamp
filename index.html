@@ -333,8 +333,9 @@
                         <!-- <img src="/Revamp/assets/img/contact-img.png" alt="contact" class="contact__img"> -->
 
                         <div class="quote__form">
-                            <!-- <form action="/submit" method="POST"> -->
-                                <form onsubmit="onSubmit(event)" method="POST">
+                             <form action="https://api.web3forms.com/submit" method="POST">
+                                <input type="hidden" name="access_key" value="ceab3c13-e6a3-4430-8465-74656f19626b"> 
+                                <!-- <form onsubmit="onSubmit(event)"> -->
                                 <label for="name">
                                     full name:
                                 </label>
@@ -383,10 +384,10 @@
                                 <label for="message">Message:</label>
                                 <textarea id="message" name="client_message" placeholder="Write your message here" required></textarea>
 
-                                <button type="submit" class="quote__button button">
-                                    submit quote
+                                <div><button type="submit" value= "Send Message" class="quote__button button">
+                                 submit quote
                                 </button>
-                                
+                            </div>
                             </form>
                         </div>
                     </div>
