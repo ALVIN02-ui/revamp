@@ -115,37 +115,37 @@ document.querySelector('.read-more-btn').addEventListener('click', function() {
 /*==========submit quote=======*/
 // Add an event listener to the "submit" button
 
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.querySelector("form");
-    const resultElement = document.createElement("p"); // Create a paragraph element to display the result
-    form.appendChild(resultElement); // Append the result element to the form
+// document.addEventListener("DOMContentLoaded", function() {
+//     const form = document.querySelector("form");
+//     const resultElement = document.createElement("p"); // Create a paragraph element to display the result
+//     form.appendChild(resultElement); // Append the result element to the form
   
-    form.addEventListener("submit", async function(event) {
-      event.preventDefault();
-      resultElement.textContent = "Sending...."; // Display "Sending..." message
-      const formData = new FormData(event.target);
+//     form.addEventListener("submit", async function(event) {
+//       event.preventDefault();
+//       resultElement.textContent = "Sending...."; // Display "Sending..." message
+//       const formData = new FormData(event.target);
   
-      formData.append("access_key", "ceab3c13-e6a3-4430-8465-74656f19626b");
+//       formData.append("access_key", "ceab3c13-e6a3-4430-8465-74656f19626b");
   
-      try {
-        const response = await fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          body: formData
-        });
+//       try {
+//         const response = await fetch("https://api.web3forms.com/submit", {
+//           method: "POST",
+//           body: formData
+//         });
   
-        const data = await response.json();
+//         const data = await response.json();
   
-        if (data.success) {
-          resultElement.textContent = "Form Submitted Successfully";
-          form.reset(); // Reset the form
-        } else {
-          console.log("Error", data);
-          resultElement.textContent = data.message; // Display the error message
-        }
-      } catch (error) {
-        console.error("Request failed", error);
-        resultElement.textContent = "An error occurred. Please try again."; // Display a generic error message
-      }
-    });
-  });
+//         if (data.success) {
+//           resultElement.textContent = "Form Submitted Successfully";
+//           form.reset(); // Reset the form
+//         } else {
+//           console.log("Error", data);
+//           resultElement.textContent = data.message; // Display the error message
+//         }
+//       } catch (error) {
+//         console.error("Request failed", error);
+//         resultElement.textContent = "An error occurred. Please try again."; // Display a generic error message
+//       }
+//     });
+//   });
   
