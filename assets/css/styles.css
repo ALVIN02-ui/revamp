@@ -633,13 +633,6 @@ img {
 .footer__info {
     font-style: normal;
 }
-.footer__info{
-    color: var(--text-color-light);
-    transition: color 400ms;
-}
-.footer__info:hover{
-    color: var(--first-color)
-}
 .footer__content {
     grid-template-columns: repeat(2, max-content);
     justify-content: space-around;
