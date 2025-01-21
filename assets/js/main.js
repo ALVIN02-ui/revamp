@@ -148,4 +148,29 @@ document.querySelector('.read-more-btn').addEventListener('click', function() {
 //       }
 //     });
 //   });
-  
+document.getElementById("quoteForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(document.getElementById("quoteForm"));
+    const responseMessage = document.getElementById("responseMessage");
+
+    try {
+        const response = await fetch("send_email.php", {
+            method: "POST",
+            body: formData,
+        });
+
+        const result = await response.json();
+
+        if (result.status === "success") {
+            responseMessage.textContent = "Thank you! Your request has been submitted.";
+            responseMessage.style.color = "green";
+        } else {
+            responseMessage.textContent = `Error: ${result.message}`;
+            responseMessage.style.color = "red";
+        }
+    } catch (error) {
+        responseMessage.textContent = "An error occurred while submitting the form.";
+        responseMessage.style.color = "red";
+    }
+});
