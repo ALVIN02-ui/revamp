@@ -155,7 +155,7 @@ document.getElementById("quoteForm").addEventListener("submit", async (e) => {
     const responseMessage = document.getElementById("responseMessage");
 
     try {
-        const response = await fetch("send_email.php", {
+        const response = await fetch("send_mail.php", {
             method: "POST",
             body: formData,
         });
