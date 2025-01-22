@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mail->Host = 'gra108.truehost.cloud';
         $mail->SMTPAuth = true;
         $mail->Username = 'info@mssl.ke'; // Your email
-        $mail->Password = 'l-n?[z]N&^?L'; // Your email password
+        $mail->Password = 'bD$UgZ{${4Rb'; // Your email password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
@@ -49,3 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 } else {
     echo json_encode(['status' => 'error', 'message' => 'Invalid request method.']);
 }
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
