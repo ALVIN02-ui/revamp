@@ -6,29 +6,29 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Sanitize inputs
     $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $phone = htmlspecialchars($_POST['phone']);
     $subject = htmlspecialchars($_POST['subject']);
     $message = htmlspecialchars($_POST['message']);
 
-    // Create an instance of PHPMailer
-    $mail = new PHPMailer(true);
-
     try {
-        // SMTP settings
+        // PHPMailer setup (same as your current code)
+        $mail = new PHPMailer(true);
+
         $mail->isSMTP();
-        $mail->Host = 'gra108.truehost.cloud';
+        $mail->Host = 'gra10.truehost.cloud';
         $mail->SMTPAuth = true;
-        $mail->Username = 'info@mssl.ke'; // Your email
-        $mail->Password = 'bD$UgZ{${4Rb'; // Your email password
+        $mail->Username = 'info@mssl.ke';
+        $mail->Password = 'bD$UgZ{${4Rb';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
-        // Email settings
-        $mail->setFrom('info@mssl.ke', 'MSSL KE'); // Sender's email
-        $mail->addAddress('info@mssl.ke'); // Receiver's email (can be the same as sender)
+        $mail->setFrom('info@mssl.ke', 'MSSL KE');
+        $mail->addAddress('info@mssl.ke');
+
         $mail->isHTML(true);
         $mail->Subject = "New Quote Request from $name";
         $mail->Body = "
@@ -40,16 +40,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <p><strong>Message:</strong><br>$message</p>
         ";
 
-        // Send email
         $mail->send();
+
+        // Send success response
         echo json_encode(['status' => 'success', 'message' => 'Email sent successfully!']);
     } catch (Exception $e) {
-        echo json_encode(['status' => 'error', 'message' => 'Failed to send email: ' . $mail->ErrorInfo]);
+        // Send error response
+        echo json_encode(['status' => 'error', 'message' => 'Failed to send email. Error: ' . $mail->ErrorInfo]);
     }
 } else {
+    // Invalid request
     echo json_encode(['status' => 'error', 'message' => 'Invalid request method.']);
 }
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-

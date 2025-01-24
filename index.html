@@ -375,17 +375,17 @@
                                 <label for="name">
                                     Full name:
                                 </label>
-                                <input class="contact__data" id="client-name" type="text" placeholder="Susan Smith" required>
+                                <input class="contact__data" id="client-name" type="text" name="name" placeholder="Susan Smith" required>
 
                                 <label for="email">
                                     email address (optional)
                                 </label>
-                                <input type="email" class="contact__data" id="client-email" placeholder="susansmith@gmail.com" >
+                                <input type="email" class="contact__data" id="client-email" name="email" placeholder="susansmith@gmail.com" >
 
                                 <label for="phone">
                                     mobile number
                                 </label>
-                                <input type="tel" class="contact__data" id="client-mobile" placeholder="+254712345678" required>
+                                <input type="tel" class="contact__data" id="client-mobile" name="phone" placeholder="+254712345678" required>
 
                                 <label for="subject">
                                     subject (optional)
@@ -418,14 +418,14 @@
                                 </select>
 
                                 <label for="message">Message:</label>
-                                <textarea id="message" name="client_message" placeholder="Write your message here" required></textarea>
+                                <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
 
                                 <div >
                                     <input type="submit" value= "Submit Quote" class="quote__button button" >
                                 </input>
                             </div>
                             </form>
-                            <div id="responseMessage"></div>
+                            <div id="responseMessage" class="responseMessage"></div>
                         </div>
                     </div>
                 </div>
@@ -588,5 +588,7 @@
 
 		<!--=============== MAIN JS ===============-->
 		<script src="assets/js/main.js"></script>
+        <!--=============== form handler===========-->
+        <script src="assets/js/formhandler.js"></script>
 	</body>
 </html>
